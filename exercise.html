@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="docReady()">
+<img id="hinata" src="https://scontent.fhan3-1.fna.fbcdn.net/v/t1.0-9/62065073_2477353122551868_3562435974849888256_n.jpg?_nc_cat=110&_nc_oc=AQl0IxHTyJxKIaq-J_CuJtuJX8oLRZlNnuK_H77MxPo2LBotfhhRCurr2Uutu98hl64&_nc_ht=scontent.fhan3-1.fna&oh=68b473158071b188577a125af32d443c&oe=5E0F6698" style="position:absolute;left:0; top:0;" height="400"
+     width="300"/>
+<script>
+    function upArrowPressed() {
+        let element = document.getElementById("hinata");
+        element.style.top = parseInt(element.style.top) - 5 + 'px';
+    }
+
+    function downArrowPressed() {
+        let element = document.getElementById("hinata");
+        element.style.top = parseInt(element.style.top) + 5 + 'px';
+    }
+
+    function leftArrowPressed() {
+        let element = document.getElementById("hinata");
+        element.style.left = parseInt(element.style.left) - 5 + 'px';
+    }
+
+    function rightArrowPressed() {
+        let element = document.getElementById("hinata");
+        element.style.left = parseInt(element.style.left) + 5 + 'px';
+    }
+
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                leftArrowPressed();
+                break;
+            case 39:
+                rightArrowPressed();
+                break;
+            case 38:
+                upArrowPressed();
+                break;
+            case 40:
+                downArrowPressed();
+                break;
+        }
+    }
+
+    function docReady() {
+        window.addEventListener('keydown', moveSelection);
+    }
+
+</script>
+</body>
+</html>
